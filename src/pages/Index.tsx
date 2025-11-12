@@ -58,10 +58,10 @@ const Index = () => {
   ];
 
   const advantages = [
-    { number: "25 000+", title: "позиций", subtitle: "в наличии" },
-    { number: "Крепёж по DIN,", title: "ISO и ГОСТ", subtitle: "" },
-    { number: "Входной контроль", title: "качества", subtitle: "" },
-    { number: "Изготовление крепежа", title: "под нестандартные", subtitle: "технические параметры" }
+    { number: "25 000+", title: "позиций", subtitle: "в наличии", icon: "Package" },
+    { number: "Крепёж по DIN,", title: "ISO и ГОСТ", subtitle: "", icon: "FileCheck" },
+    { number: "Входной контроль", title: "качества", subtitle: "", icon: "ShieldCheck" },
+    { number: "Изготовление крепежа", title: "под нестандартные", subtitle: "технические параметры", icon: "Settings2" }
   ];
 
   const brands = ["SPAX", "INFIX", "CERTEX", "SORMAT", "ESSVE"];
@@ -248,6 +248,9 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advantages.map((adv, idx) => (
               <Card key={idx} className={`p-8 ${idx === 0 ? 'bg-white text-gray-800' : idx === 1 ? 'bg-[#00bfa5] text-white' : 'bg-gray-700 text-white'}`}>
+                <div className={`mb-4 ${idx === 0 ? 'text-primary' : 'text-current opacity-80'}`}>
+                  <Icon name={adv.icon} size={40} />
+                </div>
                 <div className="text-3xl font-bold mb-2 leading-tight">{adv.number}</div>
                 <div className="font-semibold text-lg">{adv.title}</div>
                 {adv.subtitle && <div className="text-sm opacity-80">{adv.subtitle}</div>}
