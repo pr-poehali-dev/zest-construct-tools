@@ -3,10 +3,16 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import CategoryModal from "@/components/CategoryModal";
 import { useState } from "react";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<{
+    name: string;
+    icon: string;
+    items: string[];
+  } | null>(null);
 
   const categories = [
     { name: "Ручной инструмент", icon: "Wrench", items: ["Отвёртки", "Плоскогубцы / Пассатижи", "Бокорезы", "Кусачки", "Ножницы по металлу", "Ножовки по дереву и металлу", "Напильники", "Молотки / Киянки", "Топоры", "Шпатели, терки, мастерки"] },
@@ -108,7 +114,11 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category, idx) => (
-              <Card key={idx} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+              <Card 
+                key={idx} 
+                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                onClick={() => setSelectedCategory(category)}
+              >
                 <div className="flex items-center mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                     <Icon name={category.icon} size={28} />
@@ -260,6 +270,11 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <CategoryModal 
+        category={selectedCategory} 
+        onClose={() => setSelectedCategory(null)} 
+      />
     </div>
   );
 };
