@@ -269,7 +269,7 @@ const Index = () => {
       <section id="about" className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">О компании</h2>
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
             <div>
               <p className="text-lg mb-6">
                 Мы разрабатываем для вас максимально качественную, крепежную продукцию, 
@@ -291,6 +291,38 @@ const Index = () => {
                 продукция не уступает по качеству и решению ассортиментного стандарта 
                 отечественного и зарубежного производителей.
               </p>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold mb-6">Контакты</h3>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <Icon name="MapPin" size={24} className="text-primary mr-3 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Инициативная улица 57/1, Кемерово</p>
+                    <p className="text-muted-foreground">2 этаж</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <Icon name="Phone" size={24} className="text-primary mr-3 flex-shrink-0" />
+                  <a href="tel:+73842901122" className="font-semibold text-lg hover:text-primary transition-colors">
+                    +7 (3842) 90-11-22
+                  </a>
+                </div>
+              </div>
+            </Card>
+
+            <div className="rounded-lg overflow-hidden h-[300px] lg:h-auto">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=86.025974%2C55.400711&z=16&pt=86.025974,55.400711,pm2rdm"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allowFullScreen
+                className="min-h-[300px]"
+              ></iframe>
             </div>
           </div>
         </div>
