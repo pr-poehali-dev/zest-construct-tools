@@ -118,13 +118,15 @@ const Index = () => {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-[#00bfa5] text-white p-6">
-                <h3 className="font-bold text-xl mb-2">Доставка от 2 часов</h3>
-                <p className="text-sm mb-4">по всей России</p>
+              <Card className="bg-[#00bfa5] text-white p-6 relative overflow-hidden">
+                <div className="relative z-10">
+                  <h3 className="font-bold text-xl mb-2">Собираем заказ</h3>
+                  <p className="text-sm mb-4">в течение 15 минут</p>
+                </div>
                 <img 
-                  src="https://cdn.poehali.dev/files/9ce8c030-99a7-48de-902f-72d32f0324c8.png" 
-                  alt="Delivery" 
-                  className="w-24 h-24 object-contain ml-auto"
+                  src="https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/822f9f77-4bc5-428c-a46e-dc186de7137f.jpg" 
+                  alt="Fast order assembly" 
+                  className="absolute bottom-0 right-0 w-32 h-32 object-cover rounded-tl-3xl opacity-40"
                 />
               </Card>
 
