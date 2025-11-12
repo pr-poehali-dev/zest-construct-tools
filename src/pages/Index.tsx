@@ -251,8 +251,8 @@ const Index = () => {
                 <div className={`mb-4 ${idx === 0 ? 'text-primary' : 'text-current opacity-80'}`}>
                   <Icon name={adv.icon} size={40} />
                 </div>
-                <div className="text-3xl font-bold mb-2 leading-tight">{adv.number}</div>
-                <div className="font-semibold text-lg">{adv.title}</div>
+                <div className="text-2xl font-bold mb-2 leading-tight">{adv.number}</div>
+                <div className="font-semibold text-base">{adv.title}</div>
                 {adv.subtitle && <div className="text-sm opacity-80">{adv.subtitle}</div>}
               </Card>
             ))}
