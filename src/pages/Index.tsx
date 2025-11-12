@@ -100,18 +100,18 @@ const Index = () => {
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 relative overflow-hidden rounded-lg bg-gray-200">
+            <div className="lg:col-span-2 relative overflow-hidden rounded-lg bg-gray-300">
               <div 
                 className="h-[400px] bg-cover bg-center flex items-center relative"
                 style={{ backgroundImage: `url('https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/b5bef3da-bb23-498e-b91c-43008794bb5a.jpg')` }}
               >
-                <div className="absolute inset-0 bg-white/70"></div>
+                <div className="absolute inset-0 bg-gray-200/80"></div>
                 <div className="relative z-10 p-12 max-w-2xl">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-gray-900">
                     Надежные крепежи<br/>
                     <span className="text-[#00bfa5]">— залог ваших проектов!</span>
                   </h2>
-                  <p className="text-gray-800 mb-6 text-base leading-relaxed">
+                  <p className="text-gray-900 mb-6 text-base leading-relaxed">
                     От прочных болтов до универсальных саморезов —<br/>
                     у нас есть всё, чтобы ваши идеи держались крепко.
                   </p>
