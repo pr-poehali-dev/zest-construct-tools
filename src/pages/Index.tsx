@@ -336,7 +336,11 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">ЖЕСТЬ</h3>
+              <img 
+                src="https://cdn.poehali.dev/files/8a6c889f-3596-4ac7-9d44-78f562a7905f.png" 
+                alt="ЖЕСТЬ" 
+                className="h-8 mb-4 brightness-0 invert"
+              />
               <div className="space-y-2 text-sm">
                 <div className="flex items-center">
                   <Icon name="Clock" size={16} className="mr-2" />
