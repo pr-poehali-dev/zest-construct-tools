@@ -16,21 +16,44 @@ const Index = () => {
 
   const categories = [
     { 
-      name: "Крепёж и метизы", 
+      name: "Ручной инструмент", 
+      icon: "Wrench", 
+      items: ["Отвёртки", "Плоскогубцы / Пассатижи", "Бокорезы", "Кусачки", "Ножницы по металлу"]
+    },
+    { 
+      name: "Измерительный инструмент", 
+      icon: "Ruler", 
+      items: ["Уровни / Линейки / Угольники", "Рулетки и измерительные инструменты"]
+    },
+    { 
+      name: "Электроинструмент", 
+      icon: "Drill", 
+      items: ["Дрели / Свёрла / Буры", "Миксеры для растворов"]
+    },
+    { 
+      name: "Крепёж", 
       icon: "Bolt", 
-      items: ["Болты", "Винты", "Шурупы", "Саморезы", "Шайбы", "Гайки", "Анкеры"],
-      image: "https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/b5bef3da-bb23-498e-b91c-43008794bb5a.jpg"
+      items: ["Болты", "Винты", "Шурупы", "Саморезы", "Шайбы"]
     },
     { 
-      name: "Инструменты", 
-      icon: "Hammer", 
-      items: ["Отвёртки", "Плоскогубцы / Пассатижи", "Бокорезы", "Кусачки", "Разводные ключи", "Газовые ключи", "Ножницы по металлу", "Ножовки по дереву и металлу", "Напильники", "Молотки / Киянки", "Топоры", "Шпатели, терки, мастерки"],
-      image: "https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/c425a186-02ba-4616-a281-75d469036587.jpg"
+      name: "Фурнитура", 
+      icon: "Lock", 
+      items: ["Замки", "Направляющие", "Засовы / Шпингалеты", "Крючки / Рымы / Проушины", "Пластины соединительные"]
     },
     { 
-      name: "Дополнительные товары", 
-      icon: "Package", 
-      items: ["Уровни / Линейки / Угольники", "Струбцины и зажимы", "Пилки / Лезвия", "Наборы бит и головок", "Кисти", "Валики малярные", "Миксеры для растворов", "Дрели / Свёрла / Буры", "Замки", "Направляющие", "Засовы / Шпингалеты", "Крючки / Рымы / Проушины", "Пластины соединительные", "Защёлки / Фиксаторы", "Уголки монтажные", "Шпильки", "Хомуты", "Скобы", "Петли", "Батарейки", "Шланги и катушки", "Колёса и тележечная оснастка", "Клей, смазки, маркеры", "Рулетки и измерительные инструменты", "Контейнеры и кассеты для метизов", "Абразивные круги, диски"]
+      name: "Расходные материалы", 
+      icon: "PaintBucket", 
+      items: ["Кисти", "Валики малярные", "Абразивные круги, диски", "Пилки / Лезвия", "Клей, смазки, маркеры"]
+    },
+    { 
+      name: "Инструменты для зажима", 
+      icon: "Grip", 
+      items: ["Струбцины и зажимы", "Хомуты", "Скобы"]
+    },
+    { 
+      name: "Оснастка и аксессуары", 
+      icon: "Settings", 
+      items: ["Разводные ключи", "Газовые ключи", "Наборы бит и головок", "Шланги и катушки", "Колёса и тележечная оснастка"]
     }
   ];
 
@@ -149,43 +172,36 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="categories" className="py-16">
+      <section id="categories" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">Категории изделий</h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category, idx) => (
               <Card 
                 key={idx}
-                className="relative overflow-hidden cursor-pointer group hover:shadow-xl transition-all duration-300"
+                className="p-6 cursor-pointer hover:shadow-lg transition-shadow"
                 onClick={() => setSelectedCategory(category)}
               >
-                {category.image && (
-                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <img src={category.image} alt={category.name} className="w-full h-full object-cover" />
+                <div className="flex items-center mb-4">
+                  <div className="bg-gray-100 p-3 rounded-lg">
+                    <Icon name={category.icon} size={28} className="text-gray-700" />
                   </div>
-                )}
-                <div className="relative p-8 min-h-[300px]">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      <Icon name={category.icon} size={32} />
-                    </div>
-                    <h3 className="font-bold text-xl ml-4">{category.name}</h3>
-                  </div>
-                  <ul className="space-y-2 text-sm">
-                    {category.items.slice(0, 8).map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="mr-2">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                    {category.items.length > 8 && (
-                      <li className="text-primary font-medium pt-2">
-                        +{category.items.length - 8} позиций
-                      </li>
-                    )}
-                  </ul>
+                  <h3 className="font-bold text-lg ml-3">{category.name}</h3>
                 </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {category.items.map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <Icon name="ChevronRight" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                      <span className="ml-1">{item}</span>
+                    </li>
+                  ))}
+                  {category.items.length > 5 && (
+                    <li className="text-primary font-medium pt-2">
+                      +{category.items.length - 5} ещё
+                    </li>
+                  )}
+                </ul>
               </Card>
             ))}
           </div>
