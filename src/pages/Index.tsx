@@ -244,7 +244,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advantages.map((adv, idx) => (
               <Card key={idx} className={`p-8 ${idx === 0 ? 'bg-white text-gray-800' : idx === 1 ? 'bg-[#00bfa5] text-white' : 'bg-gray-700 text-white'}`}>
-                <div className="text-4xl font-bold mb-2">{adv.number}</div>
+                <div className="text-3xl font-bold mb-2 leading-tight">{adv.number}</div>
                 <div className="font-semibold text-lg">{adv.title}</div>
                 {adv.subtitle && <div className="text-sm opacity-80">{adv.subtitle}</div>}
               </Card>
