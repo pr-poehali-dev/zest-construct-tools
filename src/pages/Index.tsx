@@ -100,17 +100,22 @@ const Index = () => {
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 relative overflow-hidden rounded-lg">
+            <div className="lg:col-span-2 relative overflow-hidden rounded-lg bg-gray-200">
               <div 
-                className="h-[400px] bg-cover bg-center flex items-center"
+                className="h-[400px] bg-cover bg-center flex items-center relative"
                 style={{ backgroundImage: `url('https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/b5bef3da-bb23-498e-b91c-43008794bb5a.jpg')` }}
               >
-                <div className="bg-white/95 p-8 m-8 rounded-lg max-w-xl">
-                  <h2 className="text-4xl font-bold mb-4">Надежные крепежи<br/>для ваших проектов!</h2>
-                  <p className="text-muted-foreground mb-6">
-                    Огромный выбор из качественных крепежей —<br/>у нас есть всё, что нужно для любых задач!
+                <div className="absolute inset-0 bg-white/60"></div>
+                <div className="relative z-10 p-8 m-8 max-w-xl">
+                  <h2 className="text-5xl font-bold mb-4">
+                    Надежные крепежи<br/>
+                    <span className="text-[#00bfa5]">— залог ваших проектов!</span>
+                  </h2>
+                  <p className="text-gray-700 mb-6 text-lg">
+                    От прочных болтов до универсальных саморезов —<br/>
+                    у нас есть всё, чтобы ваши идеи держались крепко.
                   </p>
-                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  <Button size="lg" className="bg-[#00bfa5] hover:bg-[#00a896] text-white px-12 h-14 text-lg">
                     Сделать заказ
                   </Button>
                 </div>
@@ -118,22 +123,28 @@ const Index = () => {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-[#00bfa5] text-white p-6 relative overflow-hidden">
+              <Card className="bg-[#00bfa5] text-white p-8 relative overflow-hidden h-[185px]">
                 <div className="relative z-10">
-                  <h3 className="font-bold text-xl mb-2">Собираем заказ</h3>
-                  <p className="text-sm mb-4">в течение 15 минут</p>
+                  <h3 className="font-bold text-2xl mb-2">Доставка от 2 часов</h3>
+                  <p className="text-lg">по всей России</p>
                 </div>
                 <img 
-                  src="https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/822f9f77-4bc5-428c-a46e-dc186de7137f.jpg" 
-                  alt="Fast order assembly" 
-                  className="absolute bottom-0 right-0 w-32 h-32 object-cover rounded-tl-3xl opacity-40"
+                  src="https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/8aef086d-c845-4006-b2b8-2b51a14203ab.jpg" 
+                  alt="Fast delivery" 
+                  className="absolute bottom-0 right-0 w-40 h-32 object-contain"
                 />
               </Card>
 
-              <Card className="bg-gray-700 text-white p-6">
-                <h3 className="font-bold text-xl mb-2">90 000+ изделий</h3>
-                <p className="text-sm mb-4">выберете нас</p>
-                <Icon name="Handshake" size={64} className="ml-auto opacity-50" />
+              <Card className="bg-gray-700 text-white p-8 relative overflow-hidden h-[185px]">
+                <div className="relative z-10">
+                  <h3 className="font-bold text-2xl mb-2">90 000+ клиентов</h3>
+                  <p className="text-lg">выбирают нас</p>
+                </div>
+                <img 
+                  src="https://cdn.poehali.dev/projects/aa3dba31-9412-4eb4-bcb6-4b5acfe13ece/files/d925f630-4f7d-446f-90db-4337ce164bbb.jpg" 
+                  alt="Happy clients" 
+                  className="absolute bottom-0 right-0 w-48 h-32 object-cover rounded-tl-3xl opacity-50"
+                />
               </Card>
             </div>
           </div>
